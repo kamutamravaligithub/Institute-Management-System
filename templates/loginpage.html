@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+</head>
+<style media="screen">
+    input[name]{
+        margin-top:-5px;
+    }
+    form{
+        margin-top:100px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <form method="POST" class="border px-3 py-3">
+                    <h1 class="text-center bg-info text-white pb-2 shadow">Login Here...</h1>
+                    {% csrf_token %}
+                    <label>Enter UserName</label>
+                    <input type="text" name="username" class="form-control" placeholder="UserName">
+                    <label>Enter Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <center class="mt-2">
+                        <input type="submit" value="Submit" class="btn btn-success">
+                        <input type="reset" value="Clear" class="btn btn-danger"><br>
+                        <a href="{% url 'registrationpage' %}">New Account?</a>
+                        {% include 'alerts.html' %}
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

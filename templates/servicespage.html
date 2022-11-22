@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Services Page</title>{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <img src="{% static 'instituteapp/img/services.jpg' %}" style="height:50%; width:100%">
+    <table class="table table-bordered  text-center">
+        <thead class="bg-success text-white">
+            <tr>
+                <th>Course Name</th>
+                <th>Duration</th>
+                <th>Fee</th>
+                <th>Start Date</th>
+                <th>Timings</th>
+                <th>Trainer Name</th>
+                <th>Trainer Exp</th>
+                <th>Training Mode</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.duration }}</td>
+                <td>{{ course.fee }}</td>
+                <td>{{ course.start_date }}</td>
+                <td>{{ course.timings }}</td>
+                <td>{{ course.trainer_name }}</td>
+                <td>{{ course.trainer_exp }}</td>
+                <td>{{ course.training_mode }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="container-fluid">
+        <h2 class="text-center">Training Modes</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static  'instituteapp/img/online.jpg' %}"  style="width:100%;height:100%" class="img-thumbnail">
+                <h4 class="text-center">Online Training</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'instituteapp/img/onoffline.jpg' %}"  style="width:100%;height:100%" class="img-thumbnail">
+                <h4 class="text-center">Online & Offline Training</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'instituteapp/img/offline.jpg' %}"  style="width:100%;height:100%" class="img-thumbnail">
+                <h4 class="text-center">Online Training</h4>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

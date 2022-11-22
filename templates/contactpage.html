@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Contact Page</title>{% endblock %}
+</head>
+<body>
+    {% block content %}
+    <style media="screen">
+        .cls1{
+            font-size:20px;
+        }
+    </style>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <center>
+                    <input type="submit" value="Submit" class="btn btn-success">
+                    <input type="reset" value="Clear" class="btn btn-danger"
+                    </center>   
+                </form>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4451544912577!2d78.44357301487703!3d17.438395188048005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910956383b7f%3A0xb25b7c2fe2e4fd5d!2sNarayana%20Tech%20House!5e0!3m2!1sen!2sin!4v1667472526296!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1 class="text-center">Branch-1</h1> 
+                <pre class="cls1">
+                  Narayana Tech House
+                  #303, Nagasai Nivas,
+                  Aster Prime Hospital Lane,
+                  Ameerpet, Hyderabad
+                </pre>  
+            </div>
+            <div class="col-md-4">
+                <h1 class="text-center">Branch-2</h1>
+                <pre class="cls1">
+                  Narayana Tech House
+                  #101, Amala Nivas,
+                  Aster NTH Hospital Lane,
+                  Bandra, Mumbai
+                </pre>  
+            </div>
+            <div class="col-md-4">
+                <h1 class="text-center">Branch-3</h1>
+                <pre class="cls1">
+                  Narayana Tech House
+                  #303, Akash Nivas,
+                  Banivihar,
+                  Shaheed Nagar, Bhuvanewar
+                </pre>  
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
